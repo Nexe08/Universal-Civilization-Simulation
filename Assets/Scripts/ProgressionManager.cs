@@ -8,6 +8,8 @@ namespace Assets.Scripts
     public class ProgressionManager : MonoBehaviour
     {
         int CollectedPoint = 0;
+        [SerializeField]
+        int CivilizationLevel = 0;
         
         ProgressionManager selfInstance;
 
@@ -25,7 +27,8 @@ namespace Assets.Scripts
         }
 
         
-        public void AddPoint(int value)
+        // called in orb.cs
+        public void SetPoint(int value)
         {
             CollectedPoint += value;
         }
@@ -36,6 +39,11 @@ namespace Assets.Scripts
             return CollectedPoint;
         }
 
+
+        public int GetCivilizationLevel()
+        {
+            return CivilizationLevel;
+        }
 
         // IMGUI
         void OnGUI()
