@@ -6,6 +6,6 @@ public class OrbDetector : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("is detecting ,", other);
+        GameObject.Destroy(other.gameObject);
     }
 }
