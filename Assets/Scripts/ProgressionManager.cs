@@ -1,3 +1,4 @@
+using System;
 using System.Drawing;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,11 +8,16 @@ namespace Assets.Scripts
 {
     public class ProgressionManager : MonoBehaviour
     {
-        int CollectedPoint = 0;
-        [SerializeField]
+        public delegate void CollectedPointEventHandler(int collectedPointValue);
+        public event CollectedPointEventHandler CollectedPointChanged;
+
+        int CollectedPoint {get; set;}
+        [SerializeField] // serialized for debug purpose.
         int CivilizationLevel = 0;
         
+        
         ProgressionManager selfInstance;
+
 
         void Awake()
         {
@@ -31,6 +37,7 @@ namespace Assets.Scripts
         public void SetPoint(int value)
         {
             CollectedPoint += value;
+            OnColllectedPointChanged();
         }
 
 
@@ -45,10 +52,17 @@ namespace Assets.Scripts
             return CivilizationLevel;
         }
 
+
+        protected virtual void OnColllectedPointChanged()
+        {
+            CollectedPointChanged(CollectedPoint);
+        }
+        
         // IMGUI
         void OnGUI()
         {
-            GUI.TextArea(new Rect(Screen.width / 2,0,Screen.width * .1f,Screen.height*.1f), CollectedPoint.ToString());
+            // civilization level/phase
+            GUI.TextArea(new Rect(Screen.width*.2f,0,Screen.width * .1f,Screen.height*.1f), CivilizationLevel.ToString());
         }
     }
 }
