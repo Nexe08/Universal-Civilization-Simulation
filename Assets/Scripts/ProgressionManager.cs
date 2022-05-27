@@ -21,15 +21,7 @@ namespace Assets.Scripts
 
         void Awake()
         {
-            if (selfInstance == null)
-            {
-                selfInstance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                DestroyImmediate(gameObject);
-            }
+            
         }
 
         

@@ -14,7 +14,6 @@ public class Orb : MonoBehaviour
     void Start()
     {
         pro_man = GameObject.Find("ProgressionManager").GetComponent<ProgressionManager>();
-        // it need to be called here so old point gameobject cant update there value in new phase of civilization
         ManageHoldedPoint();
     }
     
@@ -23,6 +22,8 @@ public class Orb : MonoBehaviour
     {
         // add point corresponding to its level
         pro_man.SetPoint(HoldedPoint);
+        // event
+        SingltonManager.Instance.OrbDestroyed = true;
         // play animation;
     }    
 

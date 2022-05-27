@@ -21,6 +21,7 @@ public class CivilizationProgress : MonoBehaviour
     }
 
 
+    // called based on event in progression manager
     void SetCollectedPoint(int collectedPointValue)
     {
         CollectedPoint += collectedPointValue;
@@ -30,8 +31,8 @@ public class CivilizationProgress : MonoBehaviour
 
     void UpdateCollectedPointVisuals()
     {
-            slider.value = CollectedPoint;
-            slider.maxValue = 20;
-            text.text = CollectedPoint.ToString();
+        slider.value = CollectedPoint;
+        slider.maxValue = 20;
+        text.text = CollectedPoint.ToString();
     }
 }
