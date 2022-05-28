@@ -6,12 +6,12 @@ using UnityEngine.UI;
 using UnityEngine;
 using Assets.Scripts;
 
-public class CivilizationProgress : MonoBehaviour
+public class CivilizationProgressBar : MonoBehaviour
 {
 
     public TMP_Text text;
     
-    public float CollectedPoint;
+    public int CollectedPoint;
     Slider slider;
     
     void Start()
@@ -24,7 +24,7 @@ public class CivilizationProgress : MonoBehaviour
     // called based on event in progression manager
     void SetCollectedPoint(int collectedPointValue)
     {
-        CollectedPoint += collectedPointValue;
+        CollectedPoint = collectedPointValue;
         UpdateCollectedPointVisuals();
     }
 

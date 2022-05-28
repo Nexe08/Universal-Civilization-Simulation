@@ -7,6 +7,7 @@ namespace Assets.Scripts
 {
 	public class SingltonManager : MonoBehaviour
 	{
+        [HideInInspector]
 		public bool OrbDestroyed;
 		
 		public static SingltonManager Instance;
@@ -23,6 +24,24 @@ namespace Assets.Scripts
                 DestroyImmediate(gameObject);
             }
 		}
-	}
+	} // class end
+
+    
+    public class Utile
+    {
+        public static bool GetRange(int value, int rangeA, int rangeB)
+        {
+            if (value > rangeA && value < rangeB)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+    } // class end
 }
+
 
