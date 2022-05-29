@@ -125,10 +125,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d6c12c650abf8a469cd86dd952b4391, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -363,6 +363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095658ba1b3ca214a9ca52cd92c895c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HeartBeat: {fileID: 573100212}
+  PlayHeartBeatSFX: 0
   runSpeed: 3
 --- !u!58 &1232930779
 CircleCollider2D:
