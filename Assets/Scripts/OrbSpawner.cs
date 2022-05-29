@@ -8,7 +8,9 @@ public class OrbSpawner : MonoBehaviour
     public GameObject OrbPrefabe;
     public Transform player_position;
 
-    const int MAX_ORB = 20;
+    public float SpawneRadius = 7;
+    public int MAX_ORB = 40;
+    
 
     void Start()
     {
@@ -32,8 +34,8 @@ public class OrbSpawner : MonoBehaviour
         Instantiate(
             OrbPrefabe,
             new Vector3(
-                Random.Range(player_position.position.x - 10, player_position.position.x + 10),
-                Random.Range(player_position.position.y - 10, player_position.position.y + 10),
+                Random.Range(player_position.position.x - SpawneRadius, player_position.position.x + SpawneRadius),
+                Random.Range(player_position.position.y - SpawneRadius, player_position.position.y + SpawneRadius),
                 0
             ),
             Quaternion.identity,
