@@ -24,14 +24,16 @@ public class Orb : MonoBehaviour
     void Update()
     {
         // destroyed if is far from player position
-        if (Vector3.Distance(transform.position, player.GetComponent<Transform>().position) > MaxDistanceFromPlayer)
+        if (Vector3.Distance(transform.position, player.GetComponent<Transform>().position) > MaxDistanceFromPlayer) {
             Destroy(gameObject, 1f);
+            IsSelfDestructed = true;
+        }
     }
     
     
     void OnDestroy()
     {
-        if (IsSelfDestructed)
+        if (!IsSelfDestructed)
             // add point corresponding to its level
             pro_man.SetPoint(HoldedPoint);
         

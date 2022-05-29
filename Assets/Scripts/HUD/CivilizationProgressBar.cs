@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
@@ -11,8 +8,6 @@ public class CivilizationProgressBar : MonoBehaviour
 
     public TMP_Text text;
     
-    int CollectedPoint;
-    int MaxPoint;
     Slider slider;
     
     void Start()
@@ -22,20 +17,12 @@ public class CivilizationProgressBar : MonoBehaviour
     }
 
 
-    // called based on event in progression manager
+    // called by event in progression manager script
     void SetCollectedPoint(int collectedPointValue, int maxPointValue)
     {
-        CollectedPoint = collectedPointValue;
-        MaxPoint = maxPointValue;
-        UpdateCollectedPointVisuals();
-    }
-
-
-    // collected ponit slider
-    void UpdateCollectedPointVisuals()
-    {
-        slider.value = CollectedPoint;
-        slider.maxValue = MaxPoint;
-        text.text = CollectedPoint.ToString();
+        Debug.Log("civilization progress bar script");
+        slider.value = collectedPointValue;
+        slider.maxValue = maxPointValue;
+        text.text = collectedPointValue.ToString();
     }
 }
