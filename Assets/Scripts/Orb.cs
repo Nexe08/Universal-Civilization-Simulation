@@ -9,12 +9,14 @@ public class Orb : MonoBehaviour
 
     ProgressionManager pro_man; // progression manager
     GameObject player;
+    Animation anim;
 
 
     void Start()
     {
         player = GameObject.Find("Player");
         pro_man = GameObject.Find("ProgressionManager").GetComponent<ProgressionManager>();
+        anim = GetComponent<Animation>();
         ManageHoldedPoint();
     }
 
