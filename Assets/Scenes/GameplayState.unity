@@ -663,6 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7133561c23a26945bd204085bbc9416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CollectedPoint: 0
   CivilizationLevel: 0
 --- !u!1 &1554224881
 GameObject:

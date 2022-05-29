@@ -11,7 +11,8 @@ public class CivilizationProgressBar : MonoBehaviour
 
     public TMP_Text text;
     
-    public int CollectedPoint;
+    int CollectedPoint;
+    int MaxPoint;
     Slider slider;
     
     void Start()
@@ -22,17 +23,19 @@ public class CivilizationProgressBar : MonoBehaviour
 
 
     // called based on event in progression manager
-    void SetCollectedPoint(int collectedPointValue)
+    void SetCollectedPoint(int collectedPointValue, int maxPointValue)
     {
         CollectedPoint = collectedPointValue;
+        MaxPoint = maxPointValue;
         UpdateCollectedPointVisuals();
     }
 
 
+    // collected ponit slider
     void UpdateCollectedPointVisuals()
     {
         slider.value = CollectedPoint;
-        slider.maxValue = 20;
+        slider.maxValue = MaxPoint;
         text.text = CollectedPoint.ToString();
     }
 }
