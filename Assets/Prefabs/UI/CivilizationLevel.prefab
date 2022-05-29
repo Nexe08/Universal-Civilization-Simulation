@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6904093624964632389}
   - component: {fileID: 6904093624964632395}
   - component: {fileID: 6904093624964632388}
+  - component: {fileID: 9161082761028220925}
   m_Layer: 5
   m_Name: CivilizationLevel
   m_TagString: Untagged
@@ -87,7 +88,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 7.4
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -104,6 +105,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 6904093625812443128}
+--- !u!95 &9161082761028220925
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6904093624964632390}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 148cb3338422a304690fbeece7d40db4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6904093625812443130
 GameObject:
   m_ObjectHideFlags: 0

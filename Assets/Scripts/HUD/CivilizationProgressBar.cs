@@ -20,7 +20,6 @@ public class CivilizationProgressBar : MonoBehaviour
     // called by event in progression manager script
     void SetCollectedPoint(int collectedPointValue, int maxPointValue)
     {
-        Debug.Log("civilization progress bar script");
         slider.value = collectedPointValue;
         slider.maxValue = maxPointValue;
         text.text = collectedPointValue.ToString();

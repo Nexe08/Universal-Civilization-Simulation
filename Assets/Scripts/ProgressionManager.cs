@@ -16,9 +16,6 @@ namespace Assets.Scripts
         
         int MaxCollectedPoint;
         
-        ProgressionManager selfInstance;
-
-
         void Update()
         {
             HandleCivilizationLevel();
