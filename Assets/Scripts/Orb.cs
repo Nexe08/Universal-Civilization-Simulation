@@ -1,27 +1,38 @@
-using System.Data;
-using System.Collections;
-using System.Collections.Generic;
 using Assets.Scripts;
 using UnityEngine;
 
 public class Orb : MonoBehaviour
 {
     int HoldedPoint;
+    float MaxDistanceFromPlayer = 10f;
+    bool IsSelfDestructed = false;
 
     ProgressionManager pro_man; // progression manager
+    GameObject player;
 
 
     void Start()
     {
+        player = GameObject.Find("Player");
         pro_man = GameObject.Find("ProgressionManager").GetComponent<ProgressionManager>();
         ManageHoldedPoint();
+    }
+
+
+    void Update()
+    {
+        // destroyed if is far from player position
+        if (Vector3.Distance(transform.position, player.GetComponent<Transform>().position) > MaxDistanceFromPlayer)
+            Destroy(gameObject, 1f);
     }
     
     
     void OnDestroy()
     {
-        // add point corresponding to its level
-        pro_man.SetPoint(HoldedPoint);
+        if (IsSelfDestructed)
+            // add point corresponding to its level
+            pro_man.SetPoint(HoldedPoint);
+        
         // event
         SingltonManager.Instance.OrbDestroyed = true;
         // play animation;
