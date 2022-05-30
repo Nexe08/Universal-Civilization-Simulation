@@ -6,17 +6,16 @@ public class Orb : MonoBehaviour
     int HoldedPoint;
     float MaxDistanceFromPlayer = 10f;
     bool IsSelfDestructed = false;
+    bool SetupComplete = false;
 
     ProgressionManager pro_man; // progression manager
     GameObject player;
-    Animation anim;
 
 
     void Start()
     {
         player = GameObject.Find("Player");
         pro_man = GameObject.Find("ProgressionManager").GetComponent<ProgressionManager>();
-        anim = GetComponent<Animation>();
         ManageHoldedPoint();
     }
 
@@ -33,9 +32,10 @@ public class Orb : MonoBehaviour
     
     void OnDestroy()
     {
-        if (!IsSelfDestructed)
+        if (!IsSelfDestructed) {
             // add point corresponding to its level
             pro_man.SetPoint(HoldedPoint);
+        }
         
         // event
         SingltonManager.Instance.OrbDestroyed = true;

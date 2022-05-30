@@ -16,10 +16,9 @@ namespace Assets.Scripts
         
         int MaxCollectedPoint;
         
-        void Update()
-        {
+        void Update() {
             HandleCivilizationLevel();
-         }
+        }
 
 
         // called in orb.cs
@@ -83,14 +82,6 @@ namespace Assets.Scripts
         protected virtual void OnColllectedPointChanged()
         {
             CollectedPointChanged(CollectedPoint, MaxCollectedPoint); // reff to delegate methode
-        }
-
-
-        // IMGUI
-        void OnGUI()
-        {
-            // civilization level/phase
-            GUI.TextArea(new Rect(Screen.width*.2f,0,Screen.width * .1f,Screen.height*.1f), CivilizationLevel.ToString());
         }
     }
 }
